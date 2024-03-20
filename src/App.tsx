@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import MonthPicker from "./Components/MonthPicker";
+import "./App.css";
 
 function App() {
+  const [selectedMonth, setSelectedMonth] = useState<number>(
+    new Date().getMonth() + 1
+  );
+  const [selectedYear, setSelectedYear] = useState<number>(
+    new Date().getFullYear()
+  );
+
+  const handleMonthChange = (month: number) => {
+    setSelectedMonth(month);
+  };
+
+  const handleYearChange = (year: number) => {
+    setSelectedYear(year);
+  };
+
+  const currentDate = new Date(selectedYear, selectedMonth - 1);
+  const formattedDate = currentDate.toLocaleDateString(undefined, {
+    month: "short",
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MonthPicker
+        onMonthChange={handleMonthChange}
+        onYearChange={handleYearChange}
+      />
+      <p>
+        {formattedDate} - {selectedYear}
+      </p>
     </div>
   );
 }
