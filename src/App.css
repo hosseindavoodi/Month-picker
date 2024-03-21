@@ -1,3 +1,7 @@
+body {
+  padding: 50px;
+}
+
 .select-wrapper {
   position: relative;
   margin-right: 10px;
@@ -32,4 +36,78 @@ select:hover {
 
 select:focus {
   border-color: #007bff;
+}
+
+.month-picker-modal {
+  width: 200px;
+  height: 320px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  border-radius: 5px;
+  left: 15px;
+}
+
+.year-selector {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding: 0 17px 0 17px;
+  font-size: 18px;
+}
+
+.month-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.month-option {
+  width: 33.3%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.month-option:hover {
+  background-color: #e9e9e9;
+}
+
+.month-option.selected {
+  color: #fa5952;
+  font-weight: 600;
+}
+
+.date-picker-header {
+  background-color: #fa5952;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+  font-size: 20px;
+}
+.arrowBtn {
+  width: 30px;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+}
+
+.arrowBtn:hover {
+  background-color: #e8e8e8;
+}
+
+.date-picker-icon {
+  width: 150px;
+  font-size: 13x;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  color: #333;
 }
